@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="fr" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ligne du temps</title>
+    <meta name="description" content="Ligne du temps moderne, mobile-first, avec Tailwind CSS." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+            colors: {
+              brand: {
+                50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc',
+                400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1',
+                800: '#075985', 900: '#0c4a6e'
+              }
+            },
+            boxShadow: {
+              soft: '0 10px 30px -10px rgba(2,132,199,0.25)'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Subtle gradient background */
+      :root { color-scheme: light dark; }
+      body { background: radial-gradient(1200px 800px at 20% -10%, #dbeafe55, transparent),
+                          radial-gradient(1200px 800px at 110% 20%, #e0e7ff55, transparent),
+                          linear-gradient(180deg, #ffffff, #f8fafc); }
+      @media (prefers-color-scheme: dark) {
+        body { background: radial-gradient(1200px 800px at 20% -10%, #0ea5e933, transparent),
+                            radial-gradient(1200px 800px at 110% 20%, #6366f133, transparent),
+                            linear-gradient(180deg, #0b1220, #0a0f1a); }
+      }
+    </style>
+  </head>
+  <body class="h-full text-slate-800 dark:text-slate-100">
+    <!-- Header -->
+    <header class="sticky top-0 z-10 backdrop-blur bg-white/60 dark:bg-slate-900/60 border-b border-slate-200/60 dark:border-slate-700/60">
+      <div class="max-w-md mx-auto px-4 py-3 flex items-center gap-3">
+        <div class="h-9 w-9 rounded-xl bg-brand-500 text-white grid place-items-center shadow-soft">🏀</div>
+        <div>
+          <h1 class="text-lg font-semibold">Ludovic Chavée</h1>
+          <p class="text-xs text-slate-500 dark:text-slate-400">38 ans, né à Liège</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Timeline -->
+    <main class="max-w-md mx-auto px-4 pb-24 pt-6">
+      <!-- Intro card -->
+      <section class="mb-6">
+        <div class="p-4 rounded-2xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+          <h2 class="text-base font-semibold">Intro</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">Chaque événement résume une période marquante. C'est fort résumé, il manque des détails, n'hésitez pas à intervenir si besoin.</p>
+        </div>
+      </section>
+
+      <ol class="relative border-s border-slate-200 dark:border-slate-700 pl-4 space-y-6">
+        <!-- 1987 — Naissance -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">1987</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/ludo_bebe.jpg" alt="" class="h-full w-full object-cover">
+              </div>
+              <h3 class="text-sm font-semibold">Naissance à Liège, un 29 janvier</h3>
+            </article>
+          </div>
+        </li>
+
+        <!-- 1987 - 1995 — Ougrée → Plainevaux -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">1987–1995</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <h3 class="text-sm font-semibold">Ougrée → Plainevaux</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Les premières aventures dans notre quartier modeste.</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- 1989 — Naissance de Totof -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">1989</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/totof.jpg" alt="" class="h-full w-full object-cover">
+              </div>
+              <h3 class="text-sm font-semibold">Naissance de Totof</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Mon témoin et frère, aussi appelé « Maochi ». Faisait comme son grand frère… enfin, il essayait.</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- 1991 — Maternelle Plainevaux -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">1991</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/primaire.png" alt="" class="h-full w-full object-cover">
+              </div>
+              <h3 class="text-sm font-semibold">Arrivée à l'école maternelle de Plainevaux</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Première rencontre avec Kervyn, Benja, Geai — la dream team.</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- 1992 — Musique & enfance -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">1992</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/nirvana.png" alt="" class="h-full w-full object-cover">
+              </div>
+              <h3 class="text-sm font-semibold">Musique & enfance</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Premier CD Jordy ("Dur dur d'être bébé"), Nirvana sort Nevermind (1991) — début d’un amour pour la musique.</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- 1994 — Découverte musicale sérieuse -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">1994</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <h3 class="text-sm font-semibold">Découverte musicale sérieuse</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">MC Solaar (Prose Combat) et The Cranberries (No Need to Argue) : les albums saignés qui n’ont pas pris une ride.</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- Années 90 — Roller & basket -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">Années 90</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <h3 class="text-sm font-semibold">Roller & basket</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">L’époque des Reebok Pump et des rollers. Benja en K2 Fatty Pro, Geai et moi en Bauer FX1.</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Kervyn n’avait pas de rollers (à peine à manger).</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- 1996 — New York, parrain & mamy Maguy -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">1996</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/mj23.png" alt="" class="h-full w-full object-cover">
+              </div>
+              <h3 class="text-sm font-semibold">Début du basket & Premier grand voyage à New York</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Avec parrain et mamy Maguy. Début des grands voyages et du basket, inspiré par MJ23.</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- 1998 — Sports mécaniques, moto & jeux vidéo -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">1998</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/ludo-karting.png" alt="" class="h-full w-full object-cover">
+              </div>
+              <h3 class="text-sm font-semibold">Sports mécaniques, moto & jeux vidéo</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Gran Turismo sur PS1 avec Arnaud. Goût pour les sports moteurs grâce à tonton et intérêt pour la moto.</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- 1999 — Sports d’hiver & changement d’école -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">1999</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <h3 class="text-sm font-semibold">Sports d’hiver & changement d’école</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Classes de neige : début du goût pour les sports d’hiver. Entrée à Saint Servais Liège, perte de vue des amis d’enfance, choix du basket.</p>
+            </article>
+          </div>
+        </li>
+        <!-- 1999 — Playback en 6ème -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">1999</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <h3 class="text-sm font-semibold">Playback en 6ème</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Pour financer le ski : Deep Purple — « Smoke on the Water ».</p>
+            </article>
+          </div>
+        </li>
+        
+        <!-- 1999 — Sports d’hiver & changement d’école -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">1999</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/team.png" alt="" class="h-full w-full object-cover object-top">
+              </div>
+              <h3 class="text-sm font-semibold">Quentin le seul ami survivant de Saint-Servais (:D)</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Rencontre avec Quentin — amitié devenue parrain de sa fille Victoria.</p>
+            </article>
+          </div>
+        </li>
+
+        
+
+        <!-- 2000-2005 — Années secondaires -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">2000–2005</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/offspring.png" alt="" class="h-full w-full object-cover">
+              </div>
+              <h3 class="text-sm font-semibold">Secondaires : basket, skate, metal</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Pas de filles, trop timide. Slipknot (2002) : premiers concerts et pogos. Pukkelpop 2003, I Love Techno 2004.</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">18 ans : première grosse moto, pas de permis — la liberté.</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- Après 2005 — Parcours d’études -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">Après 2005</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <h3 class="text-sm font-semibold">Parcours d’études</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Saint-Luc (abandon), Beeckman sport (abandon), puis infographie — métier depuis 14 ans.</p>
+            </article>
+          </div>
+        </li>
+        <!-- Première vraie histoire d’amour — Premier chagrin d’amour -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">—</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <h3 class="text-sm font-semibold">Première vraie histoire d’amour </h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Premier chagrin d’amour.</p>
+            </article>
+          </div>
+        </li>
+<!-- 2009 — Standard -->
+<li class="relative">
+  <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+  <div class="flex flex-col ms-start gap-3">
+    <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">2008 - 2009</time>
+    <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+      <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+        <img src="img/standard.png" alt="" class="h-full w-full object-cover">
+      </div>
+      <h3 class="text-sm font-semibold">Standard Champions</h3>
+      <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Clin d'oeil à notre ami ici présent (même si il va dire qu'ils ont 3 fois plus de titres)</p>
+    </article>
+  </div>
+</li>
+        <!-- 2010 — Châtel + nouvelle relation -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">2010</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/chatel.png" alt="" class="h-full w-full object-cover">
+              </div>
+              <h3 class="text-sm font-semibold">Sports d’hiver à Châtel</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Avec mon frère — retours plusieurs fois. Deuxième grande relation, premier aménagement hors de chez mes parents (~4 ans).</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- 2011 — LWS -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">2011</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <h3 class="text-sm font-semibold">Premier boulot chez LWS</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Le début d’une belle histoire professionnelle qui dure.</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- 2012 — Maldives -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">2012</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/maldives.png" alt="Maldives" class="h-full w-full object-cover">
+              </div>
+              <h3 class="text-sm font-semibold">Voyage aux Maldives</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Séjour paradisiaque pour rejoindre mon frère.</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- 2015 — Après la rupture -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">2015</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <h3 class="text-sm font-semibold">La vie continue après la rupture, show must go on.</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Le Carré à Liège, tous les vendredis, un classique depuis 2006.</p>
+            </article>
+          </div>
+        </li>
+<!-- Après 2015 — Appart Liège & histoire sérieuse -->
+<li class="relative">
+  <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+  <div class="flex flex-col ms-start gap-3">
+    <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">Après 2015</time>
+    <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+      <h3 class="text-sm font-semibold">Premier appart à Liège & nouvelle histoire sérieuse</h3>
+      <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Beaux voyages, vie en couple, jusqu’en 2019.</p>
+    </article>
+  </div>
+</li>
+        <!-- 2016 — Golf GTI & maison -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">2016</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/maison.jpg" alt="Maison à Plainevaux" class="h-full w-full object-cover">
+              </div>
+              <h3 class="text-sm font-semibold">Golf GTI & achat maison à Plainevaux</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Le chantier du siècle : tout à refaire, mais quelle aventure.</p>
+            </article>
+          </div>
+        </li>
+
+        
+
+        <!-- 2019 — Filleule Victoria -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">2019</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/victoria.jpg" alt="" class="h-full w-full object-cover">
+              </div>
+              <h3 class="text-sm font-semibold">Naissance de ma filleule Victoria</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Fier et reconnaissant d’être son parrain.</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- 2020 — Covid & déprime -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">2020</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/covid.jpg" alt="" class="h-full w-full object-cover">
+              </div>
+              <h3 class="text-sm font-semibold">Covid & grosse déprime</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Seul, sans basket, sans sorties. Tinder & plans foireux.</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- Hiver 2021 — Rencontre future femme -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">Hiver 2021</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/ludocarole.jpg" alt="" class="h-full w-full object-cover">
+              </div>
+              <h3 class="text-sm font-semibold">Rencontre avec ma future femme</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Marché de Noël, rencontre via Facebook, passions communes — rayon de soleil.</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- 2022 — Filleul Émile -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">2022</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/emile.jpg" alt="" class="h-full w-full object-cover">
+              </div>
+              <h3 class="text-sm font-semibold">Naissance de mon filleul Émile</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Fils de Totof. Nouveau rôle de parrain, toujours aussi fier.</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- 2022 — New York (3e) -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">2022</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/ny-papa.jpg" alt="" class="h-full w-full object-cover">
+              </div>
+              <h3 class="text-sm font-semibold">New York entre hommes</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Avec papa et Totof.</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- Après 2022 — Voyages & amitiés -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">Toujours 2022</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/kev.jpg" alt="" class="h-full w-full object-cover">
+              </div>
+              <h3 class="text-sm font-semibold">Voyages & amitiés</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Avec Kevin et Fiona au Portugal. Rhum coca, Uno et beaux paysages.</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- Vie de couple — Chez Carole -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">Vie de couple</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <h3 class="text-sm font-semibold">Chez Carole à Saint-Nicolas</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">On espère emménager dans la maison à Plainevaux début 2026.</p>
+            </article>
+          </div>
+        </li>
+
+        <!-- 2025 — Mariage -->
+        <li class="relative">
+          <span class="absolute -left-[21px] top-2 h-2.5 w-2.5 rounded-full bg-brand-500 ring-4 ring-white dark:ring-slate-900"></span>
+          <div class="flex flex-col ms-start gap-3">
+            <time class="shrink-0 text-xs font-medium text-brand-700 dark:text-brand-300 mt-1">2025</time>
+            <article class="flex-1 p-3 rounded-xl bg-white/80 dark:bg-white/5 backdrop-blur border border-slate-200/70 dark:border-white/10 shadow-sm">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 mb-3">
+                <img src="img/carole-ludo.jpg" alt="Carole et Ludo" class="h-full w-full object-cover">
+              </div>
+              <h3 class="text-sm font-semibold">Mariage</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Le grand oui, entouré des proches, la fête, les sourires et le début d’un nouveau chapitre.</p>
+            </article>
+          </div>
+        </li>
+      </ol>
+    </main>
+  </body>
+</html>
